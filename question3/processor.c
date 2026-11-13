@@ -492,7 +492,7 @@ static struct PyModuleDef sensor_module = {
     NULL
 };
 
-/* initialisation function called when Python imports module
+/* initialisation function called when Python imports module */
 PyMODINIT_FUNC PyInit_sensor_processor(void) {
     return PyModule_Create(&sensor_module);
 }
