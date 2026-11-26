@@ -1,0 +1,8 @@
+running build_ext
+building 'sensor_processor' extension
+creating build
+creating build/temp.linux-x86_64-3.8
+x86_64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.8 -c processor.c -o build/temp.linux-x86_64-3.8/processor.o
+creating build/lib.linux-x86_64-3.8
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fwrapv -O2 -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.8/processor.o -o build/lib.linux-x86_64-3.8/sensor_processor.cpython-38-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-3.8/sensor_processor.cpython-38-x86_64-linux-gnu.so -> 

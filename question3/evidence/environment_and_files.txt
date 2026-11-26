@@ -1,0 +1,16 @@
+SENSOR PROCESSOR
+Compiler:
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Python:
+Python 3.8.10
+Python configuration:
+-I/usr/include/python3.8 -I/usr/include/python3.8
+Project files:
+total 108K
+-rw-r--r-- 1 monicadhieu monicadhieu 7.4K Nov 26 17:34 README.md
+drwxr-xr-x 4 monicadhieu monicadhieu 4.0K Nov 26 19:39 build
+drwxr-xr-x 2 monicadhieu monicadhieu 4.0K Nov 26 19:43 evidence
+-rw-r--r-- 1 monicadhieu monicadhieu  16K Nov 26 19:25 processor.c
+-rwxr-xr-x 1 monicadhieu monicadhieu  62K Nov 26 19:39 sensor_processor.cpython-38-x86_64-linux-gnu.so
+-rw-r--r-- 1 monicadhieu monicadhieu  303 Nov 26 19:01 setup.py
+-rw-r--r-- 1 monicadhieu monicadhieu 7.1K Nov 26 19:17 test_processor.py

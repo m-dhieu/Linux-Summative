@@ -1,0 +1,36 @@
+ Functional Tests 
+filter_readings: [25.0, 35.5]
+count_outliers: 2
+moving_average: [15.0, 25.0, 35.0]
+maximum_difference: 30.0
+sensor_summary: {'samples': 4, 'minimum': 10.0, 'maximum': 40.0, 'average': 25.0, 'above_average': 2}
+PASS: all functions produced expected results
+
+ Empty Dataset Tests 
+PASS: empty datasets handled correctly
+
+ Invalid Input Tests 
+PASS: Unsupported container: TypeError
+PASS: String input: TypeError
+PASS: Non-numeric element: TypeError
+PASS: Boolean reading: TypeError
+PASS: Invalid range: ValueError
+PASS: NaN range boundary: ValueError
+PASS: Zero window: ValueError
+PASS: Negative window: ValueError
+PASS: Window exceeds dataset length: ValueError
+PASS: Boolean window: TypeError
+PASS: Floating-point window: TypeError
+PASS: NaN reading: ValueError
+PASS: Infinite reading: ValueError
+PASS: Moving-average arithmetic overflow: OverflowError
+PASS: Maximum-difference arithmetic overflow: OverflowError
+
+ Performance Comparison 
+Dataset size: 500,000 readings
+Repetitions: 5
+C extension median: 13.51 ms
+Python median: 44.57 ms
+Measured speed ratio: 3.30x
+
+All tests passed successfully!
