@@ -53,7 +53,7 @@ ld sensor_analysis.o -o sensor_analysis
 
 The program reads sensor data using Linux system calls, validates readings within the range of 0–100, and calculates summary statistics. It also handles invalid records, empty values, different line endings, and file-reading errors.
 
-For additional compilation instructions, see [Question 2 Build Instructions](question2/build_instructions.txt). Execution results are available in `question2/execution_evidence.txt`.
+For additional compilation instructions, see [Question 2 Build Instructions](question2/build_instructions.md). Execution results are available in `question2/execution_evidence.txt`.
 
 ### Question 3: Python C Extension for Sensor Data Processing
 
