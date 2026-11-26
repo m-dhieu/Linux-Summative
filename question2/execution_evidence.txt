@@ -1,0 +1,114 @@
+
+ASSEMBLY-BASED SENSOR DATA VALIDATION
+
+Architecture: x86-64
+Operating System: Linux
+Assembler: NASM
+Linker: GNU ld
+
+
+BUILD: ASSEMBLING AND LINKING
+
+$ nasm -f elf64 sensor_analysis.asm -o sensor_analysis.o
+$ ld sensor_analysis.o -o sensor_analysis
+Assembly exit status: 0
+Linker exit status: 0
+Build successful :)
+
+
+TEST 1: NORMAL INPUT
+valid, invalid & empty records
+
+$ ./sensor_analysis
+Total records: 11
+Valid measurements: 6
+Invalid measurements: 5
+Sum of valid measurements: 215
+Minimum measurement: 0
+Maximum measurement: 100
+Exit status: 0
+
+
+TEST 2: LARGE INPUT
+buffer boundary handling (3047 records)
+
+Generating large input...
+$ ./sensor_analysis
+Total records: 3047
+Valid measurements: 3047
+Invalid measurements: 0
+Sum of valid measurements: 32071
+Minimum measurement: 1
+Maximum measurement: 30
+Exit status: 0
+
+
+TEST 3: WINDOWS CRLF LINE ENDINGS
+
+Generating CRLF input...
+$ ./sensor_analysis
+Total records: 4
+Valid measurements: 2
+Invalid measurements: 2
+Sum of valid measurements: 125
+Minimum measurement: 25
+Maximum measurement: 100
+Exit status: 0
+
+
+TEST 4: NO VALID MEASUREMENTS
+
+$ ./sensor_analysis
+Total records: 4
+Valid measurements: 0
+Invalid measurements: 4
+Sum of valid measurements: 0
+Minimum measurement: N/A
+Maximum measurement: N/A
+Exit status: 0
+
+
+TEST 5: MISSING INPUT FILE
+
+$ ./sensor_analysis
+Error: Could not open sensor_readings.txt
+Exit status: 1
+
+
+TEST 6: RESTORED ORIGINAL INPUT
+
+$ ./sensor_analysis
+Total records: 11
+Valid measurements: 6
+Invalid measurements: 5
+Sum of valid measurements: 215
+Minimum measurement: 0
+Maximum measurement: 100
+Exit status: 0
+
+Original input is preserved.
+
+TEST 7: FILE READ ERROR HANDLING
+
+Testing with directory instead of regular file...
+$ ./sensor_analysis
+Error: Failed to read sensor_readings.txt
+Exit status: 1
+
+
+TEST 8: FINAL EXECUTION AFTER RESTORATION
+
+Verifying original input still works...
+$ ./sensor_analysis
+Total records: 11
+Valid measurements: 6
+Invalid measurements: 5
+Sum of valid measurements: 215
+Minimum measurement: 0
+Maximum measurement: 100
+Exit status: 0
+
+
+TESTS COMPLETED
+Original sensor_readings.txt restored.
+
