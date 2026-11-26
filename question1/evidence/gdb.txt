@@ -1,0 +1,153 @@
+Script started on 2026-11-26 14:58:50+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="142" LINES="37"]
+]0;monicadhieu@m-dhieu: ~/alu/summatives/Linux-Summative[01;32mmonicadhieu@m-dhieu[00m:[01;34m~/alu/summatives/Linux-Summative[00m$ gdb ./program_debug
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.2) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./program_debug[m...
+(gdb) set pagination off
+(gdb) break _start
+Breakpoint 1 at [34m0x1100[m
+(gdb) break main
+Breakpoint 2 at [34m0x145c[m: file [32mprogram.c[m, line 47.
+(gdb) break process_transactions
+Breakpoint 3 at [34m0x12ae[m: file [32mprogram.c[m, line 25.
+(gdb) run
+Starting program: /home/monicadhieu/alu/summatives/Linux-Summative/program_debug 
+
+Breakpoint 1, [34m0x0000555555555100[m in [33m_start[m ()
+(gdb) next
+Single stepping until exit from function _start,
+which has no line number information.
+[33m__libc_start_main[m ([36mmain[m=0x55555555545c <main>, [36margc[m=1, [36margv[m=0x7fffffffd7a8, [36minit[m=0x555555555530 <__libc_csu_init>, [36mfini[m=0x5555555555a0 <__libc_csu_fini>, [36mrtld_fini[m=0x7ffff7fe0d60 <_dl_fini>, [36mstack_end[m=0x7fffffffd798) at [32m../csu/libc-start.c[m:137
+137	../csu/libc-start.c: No such file or directory.
+(gdb) info registers
+rax            0x1c                28
+rbx            0x0                 0
+rcx            0x555555555530      93824992236848
+rdx            0x7fffffffd7a8      140737488345000
+rsi            0x1                 1
+rdi            0x55555555545c      93824992236636
+rbp            0x0                 0x0
+rsp            0x7fffffffd788      0x7fffffffd788
+r8             0x5555555555a0      93824992236960
+r9             0x7ffff7fe0d60      140737354009952
+r10            0x7                 7
+r11            0x2                 2
+r12            0x555555555100      93824992235776
+r13            0x7fffffffd7a0      140737488344992
+r14            0x0                 0
+r15            0x0                 0
+rip            0x7ffff7dedf90      0x7ffff7dedf90 <__libc_start_main>
+eflags         0x206               [ PF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+(gdb) continue
+Continuing.
+
+Breakpoint 2, [33mmain[m () at [32mprogram.c[m:47
+47	int main(void) {
+(gdb) list
+42	    printf("Total Deposits:    $%.2f\n", total_deposits);
+43	    printf("Total Withdrawals: $%.2f\n", total_withdrawals);
+44	    printf("Final Balance:     $%.2f\n", final_balance);
+45	}
+46	
+47	int main(void) {
+48	    double total_deposits = 0.0;
+49	    double total_withdrawals = 0.0;
+50	    Transaction *transactions = malloc(NUM_TRANSACTIONS * sizeof(Transaction));
+51	    
+(gdb) print initial_balance
+$1 = 1000
+(gdb) print initial_balance[C&initial_balance[C[C[C[C[C[C[C[C[C[C[C[C[C
+$2 = (double *) [34m0x555555558010[m <[33minitial_balance[m>
+(gdb) continue
+Continuing.
+
+Breakpoint 3, [33mprocess_transactions[m ([36mtransactions[m=0x5555555592a0, [36mcount[m=5, [36mtotal_deposits[m=0x0, [36mtotal_withdrawals[m=0x7fffffffd7a0) at [32mprogram.c[m:25
+25	                          double *total_deposits, double *total_withdrawals) {
+(gdb) backtrace
+#0  [33mprocess_transactions[m ([36mtransactions[m=0x5555555592a0, [36mcount[m=5, [36mtotal_deposits[m=0x0, [36mtotal_withdrawals[m=0x7fffffffd7a0) at [32mprogram.c[m:25
+#1  [34m0x00005555555554ef[m in [33mmain[m () at [32mprogram.c[m:59
+(gdb) info frame
+Stack level 0, frame at 0x7fffffffd690:
+ rip = 0x5555555552ae in process_transactions ([32mprogram.c[m:25); saved rip = 0x5555555554ef
+ called by frame at 0x7fffffffd6c0
+ source language c.
+ Arglist at 0x7fffffffd680, args: [36mtransactions[m=0x5555555592a0, [36mcount[m=5, [36mtotal_deposits[m=0x0, [36mtotal_withdrawals[m=0x7fffffffd7a0
+ Locals at 0x7fffffffd680, Previous frame's sp is 0x7fffffffd690
+ Saved registers:
+  rip at 0x7fffffffd688
+(gdb) info args
+[36mtransactions[m = [34m0x5555555592a0[m
+[36mcount[m = 5
+[36mtotal_deposits[m = [34m0x0[m
+[36mtotal_withdrawals[m = [34m0x7fffffffd7a0[m
+(gdb) print count
+$3 = 5
+(gdb) print transactions
+$4 = (const Transaction *) [34m0x5555555592a0[m
+(gdb) print transactions&transactions
+$5 = (const Transaction **) [34m0x7fffffffd668[m
+(gdb) print *transactions@5
+$6 = {{id = 1001, amount = 100, type = 68 'D'}, {id = 1002, amount = 200, type = 87 'W'}, {id = 1003, amount = 300, type = 68 'D'}, {id = 1004, amount = 400, type = 87 'W'}, {id = 1005, amount = 500, type = 68 'D'}}
+(gdb) print &transactions[0]
+$7 = (const Transaction *) [34m0x5555555592a0[m
+(gdb) next
+26	    *total_deposits = 0.0;
+(gdb) list
+21	}
+22	
+23	/* process & calculate totals */
+24	void process_transactions(const Transaction *transactions, int count,
+25	                          double *total_deposits, double *total_withdrawals) {
+26	    *total_deposits = 0.0;
+27	    *total_withdrawals = 0.0;
+28	
+29	    for (int i = 0; i < count; i++) {
+30	        if (transactions[i].type == DEPOSIT) {
+(gdb) next
+27	    *total_withdrawals = 0.0;
+(gdb) next
+29	    for (int i = 0; i < count; i++) {
+(gdb) next
+30	        if (transactions[i].type == DEPOSIT) {
+(gdb) print i
+$8 = 0
+(gdb) print i[C&i
+$9 = (int *) [34m0x7fffffffd67c[m
+(gdb) nfo locals[C[C[C[C[C[C[C[C
+Undefined command: "nfo".  Try "help".
+(gdb) info locals
+[36mi[m = 0
+(gdb) continue
+Continuing.
+
+BANK TRANSACTION SUMMARY
+
+Initial Balance:   $1000.00
+Total Deposits:    $900.00
+Total Withdrawals: $600.00
+Final Balance:     $1300.00
+[Inferior 1 (process 282) exited normally]
+(gdb) quit
+]0;monicadhieu@m-dhieu: ~/alu/summatives/Linux-Summative[01;32mmonicadhieu@m-dhieu[00m:[01;34m~/alu/summatives/Linux-Summative[00m$ exit
+exit
+
+Script done on 2026-11-26 15:03:26+02:00 [COMMAND_EXIT_CODE="0"]
