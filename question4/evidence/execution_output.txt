@@ -1,0 +1,182 @@
+Starting University Library Book Reservation System...
+Queue Capacity: 5 | Total Reservations: 15
+
+Staff: queue EMPTY. Waiting for new reservation requests...
+Student: submitted reservation #1 (Book ID: 917) | queue size: 1/5
+Staff: retrieved reservation #1 (Book ID: 917) | queue size: 0/5. Processing...
+Student: submitted reservation #2 (Book ID: 440) | queue size: 1/5
+Student: submitted reservation #3 (Book ID: 910) | queue size: 2/5
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 3 / 15
+  Processed Reservations       : 0 / 15
+  Approved Reservations        : 0
+  Rejected Reservations        : 0
+  Approval Rate                : 0.0%
+  Current Reservation Queue    : 2 / 5
+
+Staff: REJECTED reservation #1 (Book ID: 917 is ODD/unavailable)
+Staff: retrieved reservation #2 (Book ID: 440) | queue size: 1/5. Processing...
+Student: submitted reservation #4 (Book ID: 283) | queue size: 2/5
+Student: submitted reservation #5 (Book ID: 270) | queue size: 3/5
+Student: submitted reservation #6 (Book ID: 187) | queue size: 4/5
+Staff: APPROVED reservation #2 (Book ID: 440 is EVEN/available)
+Staff: retrieved reservation #3 (Book ID: 910) | queue size: 3/5. Processing...
+Student: submitted reservation #7 (Book ID: 652) | queue size: 4/5
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 7 / 15
+  Processed Reservations       : 2 / 15
+  Approved Reservations        : 1
+  Rejected Reservations        : 1
+  Approval Rate                : 50.0%
+  Current Reservation Queue    : 4 / 5
+
+Student: submitted reservation #8 (Book ID: 100) | queue size: 5/5
+Student: queue FULL (5/5) Waiting to submit reservation #9 (Book ID: 850)...
+Staff: APPROVED reservation #3 (Book ID: 910 is EVEN/available)
+Staff: retrieved reservation #4 (Book ID: 283) | queue size: 4/5. Processing...
+Student: submitted reservation #9 (Book ID: 850) | queue size: 5/5
+Student: queue FULL (5/5) Waiting to submit reservation #10 (Book ID: 755)...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 9 / 15
+  Processed Reservations       : 3 / 15
+  Approved Reservations        : 2
+  Rejected Reservations        : 1
+  Approval Rate                : 66.7%
+  Current Reservation Queue    : 5 / 5
+
+Staff: REJECTED reservation #4 (Book ID: 283 is ODD/unavailable)
+Staff: retrieved reservation #5 (Book ID: 270) | queue size: 4/5. Processing...
+Student: submitted reservation #10 (Book ID: 755) | queue size: 5/5
+Student: queue FULL (5/5) Waiting to submit reservation #11 (Book ID: 607)...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 10 / 15
+  Processed Reservations       : 4 / 15
+  Approved Reservations        : 2
+  Rejected Reservations        : 2
+  Approval Rate                : 50.0%
+  Current Reservation Queue    : 5 / 5
+
+Staff: APPROVED reservation #5 (Book ID: 270 is EVEN/available)
+Staff: retrieved reservation #6 (Book ID: 187) | queue size: 4/5. Processing...
+Student: submitted reservation #11 (Book ID: 607) | queue size: 5/5
+Student: queue FULL (5/5) Waiting to submit reservation #12 (Book ID: 196)...
+Staff: REJECTED reservation #6 (Book ID: 187 is ODD/unavailable)
+Staff: retrieved reservation #7 (Book ID: 652) | queue size: 4/5. Processing...
+Student: submitted reservation #12 (Book ID: 196) | queue size: 5/5
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 12 / 15
+  Processed Reservations       : 6 / 15
+  Approved Reservations        : 3
+  Rejected Reservations        : 3
+  Approval Rate                : 50.0%
+  Current Reservation Queue    : 5 / 5
+
+Student: queue FULL (5/5) Waiting to submit reservation #13 (Book ID: 177)...
+Staff: APPROVED reservation #7 (Book ID: 652 is EVEN/available)
+Staff: retrieved reservation #8 (Book ID: 100) | queue size: 4/5. Processing...
+Student: submitted reservation #13 (Book ID: 177) | queue size: 5/5
+Student: queue FULL (5/5) Waiting to submit reservation #14 (Book ID: 498)...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 13 / 15
+  Processed Reservations       : 7 / 15
+  Approved Reservations        : 4
+  Rejected Reservations        : 3
+  Approval Rate                : 57.1%
+  Current Reservation Queue    : 5 / 5
+
+Staff: APPROVED reservation #8 (Book ID: 100 is EVEN/available)
+Staff: retrieved reservation #9 (Book ID: 850) | queue size: 4/5. Processing...
+Student: submitted reservation #14 (Book ID: 498) | queue size: 5/5
+Student: queue FULL (5/5) Waiting to submit reservation #15 (Book ID: 645)...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 14 / 15
+  Processed Reservations       : 8 / 15
+  Approved Reservations        : 5
+  Rejected Reservations        : 3
+  Approval Rate                : 62.5%
+  Current Reservation Queue    : 5 / 5
+
+Staff: APPROVED reservation #9 (Book ID: 850 is EVEN/available)
+Staff: retrieved reservation #10 (Book ID: 755) | queue size: 4/5. Processing...
+Student: submitted reservation #15 (Book ID: 645) | queue size: 5/5
+Student: finished submitting all 15 reservations. Exiting...
+Staff: REJECTED reservation #10 (Book ID: 755 is ODD/unavailable)
+Staff: retrieved reservation #11 (Book ID: 607) | queue size: 4/5. Processing...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 15 / 15
+  Processed Reservations       : 10 / 15
+  Approved Reservations        : 6
+  Rejected Reservations        : 4
+  Approval Rate                : 60.0%
+  Current Reservation Queue    : 4 / 5
+
+Staff: REJECTED reservation #11 (Book ID: 607 is ODD/unavailable)
+Staff: retrieved reservation #12 (Book ID: 196) | queue size: 3/5. Processing...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 15 / 15
+  Processed Reservations       : 11 / 15
+  Approved Reservations        : 6
+  Rejected Reservations        : 5
+  Approval Rate                : 54.5%
+  Current Reservation Queue    : 3 / 5
+
+Staff: APPROVED reservation #12 (Book ID: 196 is EVEN/available)
+Staff: retrieved reservation #13 (Book ID: 177) | queue size: 2/5. Processing...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 15 / 15
+  Processed Reservations       : 12 / 15
+  Approved Reservations        : 7
+  Rejected Reservations        : 5
+  Approval Rate                : 58.3%
+  Current Reservation Queue    : 2 / 5
+
+Staff: REJECTED reservation #13 (Book ID: 177 is ODD/unavailable)
+Staff: retrieved reservation #14 (Book ID: 498) | queue size: 1/5. Processing...
+Staff: APPROVED reservation #14 (Book ID: 498 is EVEN/available)
+Staff: retrieved reservation #15 (Book ID: 645) | queue size: 0/5. Processing...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 15 / 15
+  Processed Reservations       : 14 / 15
+  Approved Reservations        : 8
+  Rejected Reservations        : 6
+  Approval Rate                : 57.1%
+  Current Reservation Queue    : 0 / 5
+
+Staff: REJECTED reservation #15 (Book ID: 645 is ODD/unavailable)
+Staff: finished processing reservations. Exiting...
+
+ SYSTEM MONITOR REPORT 
+
+  Submitted Reservations       : 15 / 15
+  Processed Reservations       : 15 / 15
+  Approved Reservations        : 8
+  Rejected Reservations        : 7
+  Approval Rate                : 53.3%
+  Current Reservation Queue    : 0 / 5
+
+Monitor: monitoring complete. Exiting...
+
+All threads terminated gracefully
+Final Summary -> Submitted: 15 | Processed: 15 | Approved: 8 | Rejected: 7 | Queue Size: 0
