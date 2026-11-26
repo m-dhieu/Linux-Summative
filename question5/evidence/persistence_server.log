@@ -1,0 +1,6 @@
+[2026-11-26 15:08:19] [INFO] Loaded 4 registration(s); skipped 0 invalid record(s)
+[2026-11-26 15:08:19] [SERVER] University Event Registration Server listening on port 8080
+[2026-11-26 15:08:19] [SERVER] Authorized IDs: STU001-STU008 | Idle timeout: 300s
+[2026-11-26 15:08:49] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:08:49] [AUTH_OK] Student STU008 authenticated on socket 4
+[2026-11-26 15:08:49] [DISCONNECT] Client disconnected (socket 4, ID: STU008)

@@ -1,0 +1,138 @@
+ Compile server and client 
+Compilation succeeded with strict warnings enabled
+
+ Start server 
+
+ Unsuccessful authentication 
+Connected to University Event Registration Server (127.0.0.1:8080).
+Enter Student ID: ERROR Invalid Student ID
+Authentication failed. Closing connection...
+
+ Successful authentication, event listing, registration & duplicate rejection 
+Connected to University Event Registration Server (127.0.0.1:8080).
+Enter Student ID: SUCCESS Welcome STU001!
+
+ Available University Events 
+ID: 101 | AI Workshop            | Spots: 0/5
+ID: 102 | Cybersecurity Seminar  | Spots: 0/4
+ID: 103 | Research Conference    | Spots: 0/6
+
+
+Options:
+1. Register for an event
+2. Exit
+Select an option: Enter Event ID to register: 
+SUCCESS Successfully registered for Cybersecurity Seminar! (1/4 filled)
+
+ Available University Events 
+ID: 101 | AI Workshop            | Spots: 0/5
+ID: 102 | Cybersecurity Seminar  | Spots: 1/4
+ID: 103 | Research Conference    | Spots: 0/6
+
+
+Options:
+1. Register for an event
+2. Exit
+Select an option: Enter Event ID to register: 
+REJECTED - DUPLICATE You already registered for Cybersecurity Seminar
+
+ Available University Events 
+ID: 101 | AI Workshop            | Spots: 0/5
+ID: 102 | Cybersecurity Seminar  | Spots: 1/4
+ID: 103 | Research Conference    | Spots: 0/6
+
+
+Options:
+1. Register for an event
+2. Exit
+Select an option: 
+Registration session closed. Goodbye, STU001.
+
+ Six clients compete for remaining places in Event 102 
+--- STU002 ---
+Enter Student ID: SUCCESS Welcome STU002!
+SUCCESS Successfully registered for Cybersecurity Seminar! (2/4 filled)
+Registration session closed. Goodbye, STU002.
+--- STU003 ---
+Enter Student ID: SUCCESS Welcome STU003!
+SUCCESS Successfully registered for Cybersecurity Seminar! (3/4 filled)
+Registration session closed. Goodbye, STU003.
+--- STU004 ---
+Enter Student ID: SUCCESS Welcome STU004!
+SUCCESS Successfully registered for Cybersecurity Seminar! (4/4 filled)
+Registration session closed. Goodbye, STU004.
+--- STU005 ---
+Enter Student ID: SUCCESS Welcome STU005!
+REJECTED - FULL Event 'Cybersecurity Seminar' is full (4/4)
+Registration session closed. Goodbye, STU005.
+--- STU006 ---
+Enter Student ID: SUCCESS Welcome STU006!
+REJECTED - FULL Event 'Cybersecurity Seminar' is full (4/4)
+Registration session closed. Goodbye, STU006.
+--- STU007 ---
+Enter Student ID: SUCCESS Welcome STU007!
+REJECTED - FULL Event 'Cybersecurity Seminar' is full (4/4)
+Registration session closed. Goodbye, STU007.
+
+ Verify event 102 did not exceed capacity 
+Successful registrations across STU001-STU007: 4
+Full-event rejections among concurrent clients: 3
+Database registrations for Event 102: 4
+PASS: Event 102 capacity enforcement verified (4/4)
+
+ Unexpected client disconnection 
+PASS: Server detected the unexpected client disconnection
+
+ Graceful server shutdown 
+
+ Server audit log 
+[2026-11-26 15:03:55] [INFO] No existing registrations.db; starting with empty registrations
+[2026-11-26 15:03:55] [SERVER] University Event Registration Server listening on port 8080
+[2026-11-26 15:03:55] [SERVER] Authorized IDs: STU001-STU008 | Idle timeout: 300s
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_FAIL] Rejected ID 'INVALID_ID' on socket 4
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: UNAUTHENTICATED)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU001 authenticated on socket 5
+[2026-11-26 15:03:56] [REG_OK] STU001 registered for Cybersecurity Seminar (1/4)
+[2026-11-26 15:03:56] [REG_DUP] STU001 attempted duplicate registration for Cybersecurity Seminar
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 5, ID: STU001)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_OK] Student STU002 authenticated on socket 4
+[2026-11-26 15:03:56] [REG_OK] STU002 registered for Cybersecurity Seminar (2/4)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU003 authenticated on socket 5
+[2026-11-26 15:03:56] [REG_OK] STU003 registered for Cybersecurity Seminar (3/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 5, ID: STU003)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: STU002)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 6
+[2026-11-26 15:03:56] [AUTH_OK] Student STU004 authenticated on socket 6
+[2026-11-26 15:03:56] [REG_OK] STU004 registered for Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 6, ID: STU004)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_OK] Student STU005 authenticated on socket 4
+[2026-11-26 15:03:56] [REG_FULL] STU005 rejected from full event Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: STU005)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU006 authenticated on socket 5
+[2026-11-26 15:03:56] [REG_FULL] STU006 rejected from full event Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 5, ID: STU006)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_OK] Student STU007 authenticated on socket 4
+[2026-11-26 15:03:56] [REG_FULL] STU007 rejected from full event Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: STU007)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU008 authenticated on socket 5
+[2026-11-26 15:03:58] [DISCONNECT] Client disconnected (socket 5, ID: STU008)
+[2026-11-26 15:03:59] [SERVER] Shutdown requested; closing listener and client sessions
+[2026-11-26 15:03:59] [SERVER] Shutdown complete!
+
+ Persisted registration database 
+102,STU001
+102,STU002
+102,STU003
+102,STU004
+
+ Test summary 
+Expected Event 102 final state: 4/4
+Expected Event 102 registrations: STU001 plus three of STU002-STU007

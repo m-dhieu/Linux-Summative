@@ -1,0 +1,26 @@
+Connected to University Event Registration Server (127.0.0.1:8080).
+Enter Student ID: SUCCESS Welcome STU005!
+
+ Available University Events 
+ID: 101 | AI Workshop            | Spots: 0/5
+ID: 102 | Cybersecurity Seminar  | Spots: 4/4
+ID: 103 | Research Conference    | Spots: 0/6
+
+
+Options:
+1. Register for an event
+2. Exit
+Select an option: Enter Event ID to register: 
+REJECTED - FULL Event 'Cybersecurity Seminar' is full (4/4)
+
+ Available University Events 
+ID: 101 | AI Workshop            | Spots: 0/5
+ID: 102 | Cybersecurity Seminar  | Spots: 4/4
+ID: 103 | Research Conference    | Spots: 0/6
+
+
+Options:
+1. Register for an event
+2. Exit
+Select an option: 
+Registration session closed. Goodbye, STU005.

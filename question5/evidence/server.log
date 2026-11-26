@@ -1,0 +1,40 @@
+[2026-11-26 15:03:55] [INFO] No existing registrations.db; starting with empty registrations
+[2026-11-26 15:03:55] [SERVER] University Event Registration Server listening on port 8080
+[2026-11-26 15:03:55] [SERVER] Authorized IDs: STU001-STU008 | Idle timeout: 300s
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_FAIL] Rejected ID 'INVALID_ID' on socket 4
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: UNAUTHENTICATED)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU001 authenticated on socket 5
+[2026-11-26 15:03:56] [REG_OK] STU001 registered for Cybersecurity Seminar (1/4)
+[2026-11-26 15:03:56] [REG_DUP] STU001 attempted duplicate registration for Cybersecurity Seminar
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 5, ID: STU001)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_OK] Student STU002 authenticated on socket 4
+[2026-11-26 15:03:56] [REG_OK] STU002 registered for Cybersecurity Seminar (2/4)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU003 authenticated on socket 5
+[2026-11-26 15:03:56] [REG_OK] STU003 registered for Cybersecurity Seminar (3/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 5, ID: STU003)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: STU002)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 6
+[2026-11-26 15:03:56] [AUTH_OK] Student STU004 authenticated on socket 6
+[2026-11-26 15:03:56] [REG_OK] STU004 registered for Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 6, ID: STU004)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_OK] Student STU005 authenticated on socket 4
+[2026-11-26 15:03:56] [REG_FULL] STU005 rejected from full event Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: STU005)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU006 authenticated on socket 5
+[2026-11-26 15:03:56] [REG_FULL] STU006 rejected from full event Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 5, ID: STU006)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 4
+[2026-11-26 15:03:56] [AUTH_OK] Student STU007 authenticated on socket 4
+[2026-11-26 15:03:56] [REG_FULL] STU007 rejected from full event Cybersecurity Seminar (4/4)
+[2026-11-26 15:03:56] [DISCONNECT] Client disconnected (socket 4, ID: STU007)
+[2026-11-26 15:03:56] [CONNECT] Accepted client connection on socket 5
+[2026-11-26 15:03:56] [AUTH_OK] Student STU008 authenticated on socket 5
+[2026-11-26 15:03:58] [DISCONNECT] Client disconnected (socket 5, ID: STU008)
+[2026-11-26 15:03:59] [SERVER] Shutdown requested; closing listener and client sessions
+[2026-11-26 15:03:59] [SERVER] Shutdown complete!
